@@ -10,6 +10,7 @@ module.exports = {
     ecmaVersion: 13,
     sourceType: "module",
   },
+  parser: "babel-eslint",
   plugins: ["vue"],
   rules: {
     "prettier/prettier": "warn",
