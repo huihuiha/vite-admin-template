@@ -1,3 +1,1 @@
-<template>
-    header
-</template>
+<template>header</template>
