@@ -1,6 +1,5 @@
 <template>
-  <Header />
-  <div @click="add">{{ count }}</div>
+  <router-view></router-view>
 </template>
 
 <script setup lang="ts">
