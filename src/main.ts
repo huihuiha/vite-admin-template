@@ -2,6 +2,7 @@ import { createApp } from 'vue';
 import App from './App.vue';
 
 import { createRouter, createWebHistory } from 'vue-router';
+import 'uno.css'
 
 const app = createApp(App);
 
