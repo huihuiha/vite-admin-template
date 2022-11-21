@@ -1,21 +1,21 @@
-import { defineConfig } from "vite";
-import path from "path";
+import { defineConfig } from 'vite';
+import path from 'path';
 
-import vue from "@vitejs/plugin-vue";
+import vue from '@vitejs/plugin-vue';
 
-import Unocss from "unocss/vite";
-import { presetUno, presetAttributify, presetIcons } from "unocss";
-import viteEslint from "vite-plugin-eslint";
+import Unocss from 'unocss/vite';
+import { presetUno, presetAttributify, presetIcons } from 'unocss';
+import viteEslint from 'vite-plugin-eslint';
 import viteImagemin from 'vite-plugin-imagemin';
-
+import Pages from 'vite-plugin-pages';
 
 export default defineConfig({
   resolve: {
     alias: {
-      "@/": `${path.resolve(__dirname, "src")}/`,
-      "@assets/": `${path.resolve(__dirname, "src/assets")}/`
+      '@/': `${path.resolve(__dirname, 'src')}/`,
+      '@assets/': `${path.resolve(__dirname, 'src/assets')}/`,
     },
-    extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json", ".vue"],
+    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
   },
   plugins: [
     vue(),
@@ -29,7 +29,7 @@ export default defineConfig({
     viteImagemin({
       // 无损压缩配置，无损压缩下图片质量不会变差
       optipng: {
-        optimizationLevel: 7
+        optimizationLevel: 7,
       },
       // 有损压缩配置，有损压缩下图片质量可能会变差
       pngquant: {
@@ -39,14 +39,20 @@ export default defineConfig({
       svgo: {
         plugins: [
           {
-            name: 'removeViewBox'
+            name: 'removeViewBox',
           },
           {
             name: 'removeEmptyAttrs',
-            active: false
-          }
-        ]
-      }
-    })
+            active: false,
+          },
+        ],
+      },
+    }),
+    // 约定式路由
+    Pages({
+      dirs: [{ dir: 'src/pages', baseRoute: '/' }],
+      importMode: "async",
+      extensions: ['vue', 'md'],
+    }),
   ],
 });

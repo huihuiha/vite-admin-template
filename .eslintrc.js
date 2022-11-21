@@ -21,7 +21,7 @@ module.exports = {
   plugins: ["vue", "@typescript-eslint", "prettier"],
   rules: {
     // 3. 注意要加上这一句，开启 prettier 自动修复的功能
-    "prettier/prettier": "error",
+    "prettier/prettier": "warn",
     "@typescript-eslint/ban-ts-comment": "error",
     "@typescript-eslint/no-explicit-any": "warn",
     "vue/multi-word-component-names": "off",
