@@ -8,7 +8,7 @@ const app = createApp(App);
 
 const router = createRouter({
   history: createWebHistory(),
-  routes: [{ path: "/", component: () => import("@/pages/index.vue") }],
+  routes: [{ path: "/", component: () => import("@/pages/Index.vue") }],
 });
 
 app.use(router);

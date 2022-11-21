@@ -7,7 +7,7 @@
   </button>
   <i class="i-ic-baseline-edit p-3"></i>
 
-  <img :src="logoSrc" />
+  <img :src="logoSrc" />12312512545555666222521512345
 
   <div class="box"></div>
 </template>
