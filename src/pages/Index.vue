@@ -7,7 +7,7 @@
   </button>
   <i class="i-ic-baseline-edit p-3"></i>
 
-  <img :src="logoSrc" />12312512545555666222521512345
+  <img :src="logoSrc" />12312512545555666
 
   <div class="box"></div>
 </template>
@@ -15,8 +15,6 @@
 <script lang="ts" setup>
 // 1. 导入图片
 import logoSrc from "@assets/imgs/logo.png";
-
-import { ref } from "vue";
 
 const count = ref(0);
 const add = () => {

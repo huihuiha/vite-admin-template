@@ -8,6 +8,7 @@ import { presetUno, presetAttributify, presetIcons } from 'unocss';
 import viteEslint from 'vite-plugin-eslint';
 import viteImagemin from 'vite-plugin-imagemin';
 import Pages from 'vite-plugin-pages';
+import AutoImport from 'unplugin-auto-import/vite';
 
 export default defineConfig({
   resolve: {
@@ -54,5 +55,23 @@ export default defineConfig({
       importMode: "async",
       extensions: ['vue', 'md'],
     }),
+    // 按需引入
+    AutoImport({
+      include: [
+        /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+        /\.vue$/, /\.vue\?vue/, // .vue
+        /\.md$/, // .md
+      ],
+      imports: [
+        'vue',
+        'vue-router'
+      ],
+      dts: 'src/auto-imports.d.ts',
+      eslintrc: {
+        enabled: true, // Default `false`
+        filepath: './.eslintrc-auto-import.json', // Default `./.eslintrc-auto-import.json`
+        globalsPropValue: true, // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
+      },
+    })
   ],
 });

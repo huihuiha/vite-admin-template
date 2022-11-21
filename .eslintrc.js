@@ -12,6 +12,7 @@ module.exports = {
     // 1. 接入 prettier 的规则
     "prettier",
     "plugin:prettier/recommended",
+    "./.eslintrc-auto-import.json",
   ],
   parserOptions: {
     ecmaVersion: "latest",
