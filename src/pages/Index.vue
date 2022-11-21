@@ -8,6 +8,8 @@
   <i class="i-ic-baseline-edit p-3"></i>
 
   <img :src="logoSrc" />
+
+  <div class="box"></div>
 </template>
 
 <script lang="ts" setup>
@@ -21,3 +23,11 @@ const add = () => {
   count.value = count.value + 1;
 };
 </script>
+
+<style scoped lang="scss">
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: aqua;
+}
+</style>
