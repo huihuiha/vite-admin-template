@@ -20,7 +20,6 @@
       "@/*": ["src/*"]
     },
   },
-  "extends": "",
   "includes": ["vue.d.ts"],
   "exclude": ["dist", "node_modules", "cypress"]
 }

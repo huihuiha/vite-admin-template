@@ -6,9 +6,14 @@
     {{ count }}
   </button>
   <i class="i-ic-baseline-edit p-3"></i>
+
+  <img :src="logoSrc" />
 </template>
 
 <script lang="ts" setup>
+// 1. 导入图片
+import logoSrc from "@assets/imgs/logo.png";
+
 import { ref } from "vue";
 
 const count = ref(0);
