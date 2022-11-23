@@ -16,8 +16,10 @@
 </template>
 
 <script lang="ts" setup>
-// 1. 导入图片
+// 导入图片
 import logoSrc from "@assets/imgs/logo.png";
+
+// store
 import { useUserStore } from "@/stores/user";
 
 const count = ref(0);
