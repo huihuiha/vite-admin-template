@@ -4,7 +4,7 @@
     class="py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-green-500 hover:bg-green-700 border-none cursor-pointer"
     @click="add"
   >
-    {{ count }} ----------- {{ useUserStore.count }}
+    {{ count }} -----------
   </button>
   <i class="i-ic-baseline-edit p-3"></i>
 
@@ -12,7 +12,9 @@
 
   <el-button type="primary" @click="handleClick">Primary</el-button>
 
-  <div class="box"></div>
+  <div class="box" @click="countStore.increment">
+    {{ countStore.count }}
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -20,7 +22,9 @@
 import logoSrc from "@assets/imgs/logo.png";
 
 // store
-import { useUserStore } from "@/stores/user";
+import { useCounterStore } from "@/stores/user";
+
+const countStore = useCounterStore();
 
 const count = ref(0);
 const add = () => {
