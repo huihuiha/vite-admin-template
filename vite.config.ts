@@ -81,7 +81,7 @@ export default defineConfig({
       extensions: ['vue', 'md'],
       resolvers: [ElementPlusResolver()],
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-      dts: 'src/components.d.ts',
+      dts: 'components.d.ts',
     }),
   ],
 });
