@@ -78,7 +78,10 @@ export default defineConfig({
     }),
     // 组件按需引入
     Components({
+      extensions: ['vue', 'md'],
       resolvers: [ElementPlusResolver()],
+      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+      dts: 'src/components.d.ts',
     }),
   ],
 });
