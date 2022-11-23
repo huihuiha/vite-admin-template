@@ -1,6 +1,5 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import { install } from "@/plugins/pinia";
 import router from "./router";
 import { createPinia } from "pinia";
 import "uno.css";

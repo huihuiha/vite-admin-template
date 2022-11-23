@@ -69,7 +69,7 @@ export default defineConfig({
         'vue-router'
       ],
       resolvers: [ElementPlusResolver()],
-      dts: 'src/auto-imports.d.ts',
+      dts: 'auto-imports.d.ts',
       eslintrc: {
         enabled: true, // Default `false`
         filepath: './.eslintrc-auto-import.json', // Default `./.eslintrc-auto-import.json`
