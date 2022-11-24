@@ -14,6 +14,10 @@
 
   <div class="box" @click="countStore.increment">
     {{ countStore.count }}
+    <div class="box-child" @click="toggleLocales">
+      {{ t("language") }}
+      <i class="i-fluent-local-language-zi-24-filled p-3 mx-2"></i>
+    </div>
   </div>
 </template>
 
@@ -34,6 +38,15 @@ const add = () => {
 const handleClick = () => {
   alert("click");
 };
+
+// i18n
+const { t, availableLocales, locale } = useI18n();
+
+const toggleLocales = () => {
+  // change to some real logic
+  const locales = availableLocales;
+  locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length];
+};
 </script>
 
 <style scoped lang="scss">
@@ -41,5 +54,8 @@ const handleClick = () => {
   width: 100px;
   height: 100px;
   background-color: aqua;
+  .box-child {
+    color: yellow;
+  }
 }
 </style>

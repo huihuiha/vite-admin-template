@@ -11,6 +11,7 @@ import Pages from 'vite-plugin-pages';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import VueI18n from "@intlify/vite-plugin-vue-i18n";
 
 export default defineConfig({
   resolve: {
@@ -66,7 +67,8 @@ export default defineConfig({
       ],
       imports: [
         'vue',
-        'vue-router'
+        'vue-router',
+        'vue-i18n'
       ],
       resolvers: [ElementPlusResolver()],
       dts: 'auto-imports.d.ts',
@@ -82,6 +84,12 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       dts: 'components.d.ts',
+    }),
+    // 国际化
+    VueI18n({
+      runtimeOnly: true,
+      compositionOnly: true,
+      include: [path.resolve(__dirname, "locales/**")],
     }),
   ],
 });
