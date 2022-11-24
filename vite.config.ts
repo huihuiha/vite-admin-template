@@ -12,6 +12,7 @@ import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import VueI18n from "@intlify/vite-plugin-vue-i18n";
+import svgLoader from "vite-svg-loader";
 
 export default defineConfig({
   resolve: {
@@ -101,5 +102,7 @@ export default defineConfig({
       compositionOnly: true,
       include: [path.resolve(__dirname, "locales/**")],
     }),
+    // svg组件的支持
+    svgLoader(),
   ],
 });

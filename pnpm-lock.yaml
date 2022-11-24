@@ -30,6 +30,7 @@ specifiers:
   vite-plugin-eslint: ^1.8.1
   vite-plugin-imagemin: ^0.6.1
   vite-plugin-pages: ^0.27.1
+  vite-svg-loader: ^3.6.0
   vue: ^3.2.41
   vue-i18n: ^9.2.2
   vue-router: ^4.1.6
@@ -69,6 +70,7 @@ devDependencies:
   vite: 3.2.3_ajklay5k626t46b6fyghkbup3i
   vite-plugin-eslint: 1.8.1_eslint@8.27.0+vite@3.2.3
   vite-plugin-imagemin: 0.6.1_vite@3.2.3
+  vite-svg-loader: 3.6.0
 
 packages:
 
@@ -4809,6 +4811,13 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: false
+
+  /vite-svg-loader/3.6.0:
+    resolution: {integrity: sha512-bZJffcgCREW57kNkgMhuNqeDznWXyQwJ3wKrRhHLMMzwDnP5jr3vXW3cqsmquRR7VTP5mLdKj1/zzPPooGUuPw==}
+    dependencies:
+      '@vue/compiler-sfc': 3.2.41
+      svgo: 2.8.0
+    dev: true
 
   /vite/3.2.3_ajklay5k626t46b6fyghkbup3i:
     resolution: {integrity: sha512-h8jl1TZ76eGs3o2dIBSsvXDLb1m/Ec1iej8ZMdz+PsaFUsftZeWe2CZOI3qogEsMNaywc17gu0q6cQDzh/weCQ==}

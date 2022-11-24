@@ -20,12 +20,16 @@
     </div>
   </div>
 
+  <Video></Video>
+
   <Dark></Dark>
 </template>
 
 <script lang="ts" setup>
 // 导入图片
 import logoSrc from "@assets/imgs/logo.png";
+
+import Video from "@assets/svgs/video.svg";
 
 // store
 import { useCounterStore } from "@/stores/user";
