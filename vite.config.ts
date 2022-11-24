@@ -18,6 +18,9 @@ export default defineConfig({
     alias: {
       '@/': `${path.resolve(__dirname, 'src')}/`,
       '@assets/': `${path.resolve(__dirname, 'src/assets')}/`,
+      '@hooks/': `${path.resolve(__dirname, 'src/hooks')}/`,
+      '@components/': `${path.resolve(__dirname, 'src/components')}/`,
+      '@store/': `${path.resolve(__dirname, 'src/store')}/`,
     },
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
   },
