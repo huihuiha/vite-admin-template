@@ -68,15 +68,22 @@ export default defineConfig({
       imports: [
         'vue',
         'vue-router',
-        'vue-i18n'
+        'vue-i18n',
+        '@vueuse/core',
+        '@vueuse/head'
       ],
       resolvers: [ElementPlusResolver()],
       dts: 'auto-imports.d.ts',
+      dirs: [
+        'src/hooks',
+        'src/store'
+      ],
       eslintrc: {
         enabled: true, // Default `false`
         filepath: './.eslintrc-auto-import.json', // Default `./.eslintrc-auto-import.json`
         globalsPropValue: true, // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
       },
+      vueTemplate: true, //支持Vue 模版自动引入
     }),
     // 组件按需引入
     Components({

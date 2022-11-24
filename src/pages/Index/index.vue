@@ -19,6 +19,8 @@
       <i class="i-fluent-local-language-zi-24-filled p-3 mx-2"></i>
     </div>
   </div>
+
+  <Dark></Dark>
 </template>
 
 <script lang="ts" setup>
