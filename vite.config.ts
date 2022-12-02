@@ -12,7 +12,10 @@ import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import VueI18n from "@intlify/vite-plugin-vue-i18n";
-import svgLoader from "vite-svg-loader";
+
+// svg
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+
 
 export default defineConfig({
   resolve: {
@@ -32,7 +35,9 @@ export default defineConfig({
       presets: [presetUno(), presetAttributify(), presetIcons()],
     }),
     // eslint检查
-    viteEslint(),
+    // viteEslint({
+    //   fix: true
+    // }),
     // 图片压缩
     viteImagemin({
       // 无损压缩配置，无损压缩下图片质量不会变差
@@ -103,6 +108,9 @@ export default defineConfig({
       include: [path.resolve(__dirname, "locales/**")],
     }),
     // svg组件的支持
-    svgLoader(),
+    createSvgIconsPlugin({
+      iconDirs: [path.resolve(__dirname, 'src/assets/svgs')],
+      symbolId: 'icon-[dir]-[name]',
+    })
   ],
 });

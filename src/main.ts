@@ -8,8 +8,13 @@ import messages from "@intlify/vite-plugin-vue-i18n/messages";
 import "element-plus/theme-chalk/dark/css-vars.css";
 import "uno.css";
 
+// svgs
+import { install as SvgInstall } from "@/plugins/svg";
+import "virtual:svg-icons-register";
+
 // plugins
 const app = createApp(App);
+SvgInstall({ app });
 const pinia = createPinia();
 const i18n = createI18n({
   legacy: false,

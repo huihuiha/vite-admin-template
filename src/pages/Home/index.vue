@@ -20,16 +20,18 @@
     </div>
   </div>
 
-  <Video></Video>
-
   <Dark></Dark>
+
+  <Life :msg="msg"></Life>
+
+  <div class="box2">
+    <svg-icon class="svg" color="red" name="video" />
+  </div>
 </template>
 
 <script lang="ts" setup>
 // 导入图片
 import logoSrc from "@assets/imgs/logo.png";
-
-import Video from "@assets/svgs/video.svg";
 
 // store
 import { useCounterStore } from "@/stores/user";
@@ -49,10 +51,11 @@ const handleClick = () => {
 const { t, availableLocales, locale } = useI18n();
 
 const toggleLocales = () => {
-  // change to some real logic
   const locales = availableLocales;
   locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length];
 };
+
+const msg = ref("msg");
 </script>
 
 <style scoped lang="scss">
@@ -62,6 +65,18 @@ const toggleLocales = () => {
   background-color: aqua;
   .box-child {
     color: yellow;
+  }
+}
+
+.box2 {
+  width: 200px;
+  height: 200px;
+  background-color: antiquewhite;
+
+  .svg {
+    color: green;
+    width: 300px;
+    height: 300px;
   }
 }
 </style>
