@@ -1,32 +1,30 @@
-import { defineConfig } from 'vite';
-import path from 'path';
+import { defineConfig } from "vite";
+import path from "path";
 
-import vue from '@vitejs/plugin-vue';
+import vue from "@vitejs/plugin-vue";
 
-import Unocss from 'unocss/vite';
-import { presetUno, presetAttributify, presetIcons } from 'unocss';
-import viteEslint from 'vite-plugin-eslint';
-import viteImagemin from 'vite-plugin-imagemin';
-import Pages from 'vite-plugin-pages';
-import AutoImport from 'unplugin-auto-import/vite';
-import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import Unocss from "unocss/vite";
+import { presetUno, presetAttributify, presetIcons } from "unocss";
+import viteEslint from "vite-plugin-eslint";
+import viteImagemin from "vite-plugin-imagemin";
+import Pages from "vite-plugin-pages";
+import AutoImport from "unplugin-auto-import/vite";
+import Components from "unplugin-vue-components/vite";
 import VueI18n from "@intlify/vite-plugin-vue-i18n";
 
 // svg
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
-
+import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 
 export default defineConfig({
   resolve: {
     alias: {
-      '@/': `${path.resolve(__dirname, 'src')}/`,
-      '@assets/': `${path.resolve(__dirname, 'src/assets')}/`,
-      '@hooks/': `${path.resolve(__dirname, 'src/hooks')}/`,
-      '@components/': `${path.resolve(__dirname, 'src/components')}/`,
-      '@store/': `${path.resolve(__dirname, 'src/store')}/`,
+      "@/": `${path.resolve(__dirname, "src")}/`,
+      "@assets/": `${path.resolve(__dirname, "src/assets")}/`,
+      "@hooks/": `${path.resolve(__dirname, "src/hooks")}/`,
+      "@components/": `${path.resolve(__dirname, "src/components")}/`,
+      "@stores/": `${path.resolve(__dirname, "src/stores")}/`,
     },
-    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
+    extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json", ".vue"],
   },
   plugins: [
     vue(),
@@ -52,10 +50,10 @@ export default defineConfig({
       svgo: {
         plugins: [
           {
-            name: 'removeViewBox',
+            name: "removeViewBox",
           },
           {
-            name: 'removeEmptyAttrs',
+            name: "removeEmptyAttrs",
             active: false,
           },
         ],
@@ -63,43 +61,41 @@ export default defineConfig({
     }),
     // 约定式路由
     Pages({
-      dirs: [{ dir: 'src/pages', baseRoute: '/' }],
+      dirs: [{ dir: "src/pages", baseRoute: "/" }],
       importMode: "async",
-      extensions: ['vue', 'md'],
+      extensions: ["vue", "md"],
     }),
     // 按需引入
     AutoImport({
       include: [
         /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
-        /\.vue$/, /\.vue\?vue/, // .vue
+        /\.vue$/,
+        /\.vue\?vue/, // .vue
         /\.md$/, // .md
       ],
       imports: [
-        'vue',
-        'vue-router',
-        'vue-i18n',
-        '@vueuse/core',
-        '@vueuse/head'
+        "vue",
+        "vue-router",
+        "vue-i18n",
+        "@vueuse/core",
+        "@vueuse/head",
       ],
       resolvers: [ElementPlusResolver()],
-      dts: 'auto-imports.d.ts',
-      dirs: [
-        'src/hooks',
-        'src/store'
-      ],
+      dts: "auto-imports.d.ts",
+      dirs: ["src/hooks", "src/store"],
       eslintrc: {
         enabled: true, // Default `false`
-        filepath: './.eslintrc-auto-import.json', // Default `./.eslintrc-auto-import.json`
+        filepath: "./.eslintrc-auto-import.json", // Default `./.eslintrc-auto-import.json`
         globalsPropValue: true, // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
       },
       vueTemplate: true, //支持Vue 模版自动引入
     }),
     // 组件按需引入
     Components({
-      extensions: ['vue', 'md'],
+      extensions: ["vue", "md"],
       resolvers: [ElementPlusResolver()],
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-      dts: 'components.d.ts',
+      dts: "components.d.ts",
     }),
     // 国际化
     VueI18n({
@@ -109,8 +105,8 @@ export default defineConfig({
     }),
     // svg组件的支持
     createSvgIconsPlugin({
-      iconDirs: [path.resolve(__dirname, 'src/assets/svgs')],
-      symbolId: 'icon-[dir]-[name]',
-    })
+      iconDirs: [path.resolve(__dirname, "src/assets/svgs")],
+      symbolId: "icon-[dir]-[name]",
+    }),
   ],
 });
