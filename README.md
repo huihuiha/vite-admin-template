@@ -6,7 +6,15 @@
 - pnpm preview 预览打包后的项目
 
 ## 目录结构
-后续补上
+```bash
+src
++ assets # 静态资源
++ components # 组件
++ hooks  # 自定义CompositionAPI
++ pages   # 视图
++ router  # 路由
++ stores  # 状态管理库
+```
 
 ## 代码规范
 - eslint 检查
@@ -17,14 +25,15 @@
 ## 特性
 - vite 构建项目，毫秒级启动速度
 - 页面路由自动引入，只需在 pages 目录创建页面组件即可，无需 import
-- 支持暗黑模式与切换
-- pinia 管理项目
-- 自动引入 vue、vue-router、自定义hooks 相关api
+- 自动引入 vue、vue-router、vueuse、自定义hooks等相关api，无需 import
 - 自定义组件自动引入，只需在 components 目录创建即可，无需 import
-- 路由切换时，路由进度条自动化
-- 图片自动压缩，修改压缩程度可在 vite.config.ts 修改
-- svg组件的支持，通过<svg-icon name="xxx">的形状引入，svg资源放置 src/assets/svgs 内
+- pinia 全局管理项目的通用数据状态
+- 支持 css 原子化方案，采用 tailwind
+- 支持svg通过组件的形式直接使用，svg资源放置 src/assets/svgs 内
+- 图片构建自动压缩，修改压缩程度可在 vite.config.ts 修改
 - 国际化语言引入与切换功能，语言配置文件放置 locales 内，则可自动导入
+- 路由切换时，路由进度条自动化加载与消失
+- 支持暗黑模式与切换
 
 ## 业务清单（待做）
 - 登录模块
