@@ -22,8 +22,6 @@
 
   <Dark></Dark>
 
-  <Life :msg="msg"></Life>
-
   <div class="box2">
     <svg-icon class="svg" color="red" name="video" />
   </div>
