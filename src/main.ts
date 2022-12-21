@@ -6,6 +6,7 @@ import { createI18n } from 'vue-i18n';
 import messages from '@intlify/vite-plugin-vue-i18n/messages';
 
 import 'element-plus/theme-chalk/dark/css-vars.css';
+import '@assets/css/normalize.css';
 import 'uno.css';
 
 // svgs

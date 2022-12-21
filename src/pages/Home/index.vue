@@ -53,7 +53,7 @@ const toggleLocales = () => {
   locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length];
 };
 //
-const msg = ref('msg');
+// const msg = ref('msg');
 </script>
 
 <style scoped lang="scss">
