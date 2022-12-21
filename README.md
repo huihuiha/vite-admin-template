@@ -19,6 +19,8 @@ src
 ## 代码规范
 - eslint 检查
 - prettier 修改代码规范（建议 Vscode 配置保存自动修复）
+  - 邮件页面 -> 选择使用...格式文档 -> prettier
+  - 首选项 -> save -> code format开启保存格式化
 - commit 前进行代码规范检测（TODO）
 - commit 信息检测（TODO）
 
