@@ -14,15 +14,15 @@
 
 <script setup lang="ts">
 const form = reactive({
-  name: "",
-  password: "",
+  name: '',
+  password: '',
 });
 
 const router = useRouter();
 const onSubmit = () => {
-  if (form.name === "huihui" && form.password === "123456") {
+  if (form.name === 'huihui' && form.password === '123456') {
     router.push({
-      name: "Index",
+      name: 'Index',
     });
   }
 };

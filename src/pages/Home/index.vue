@@ -15,7 +15,7 @@
   <div class="box" @click="countStore.increment">
     {{ countStore.count }}
     <div class="box-child" @click="toggleLocales">
-      {{ t("language") }}
+      {{ t('language') }}
       <i class="i-fluent-local-language-zi-24-filled p-3 mx-2"></i>
     </div>
   </div>
@@ -31,10 +31,10 @@
 
 <script lang="ts" setup>
 // 导入图片
-import logoSrc from "@assets/imgs/logo.png";
+import logoSrc from '@assets/imgs/logo.png';
 
 // store
-import { useCounterStore } from "@/stores/user";
+import { useCounterStore } from '@/stores/user';
 
 const countStore = useCounterStore();
 
@@ -44,7 +44,7 @@ const add = () => {
 };
 
 const handleClick = () => {
-  alert("click");
+  alert('click');
 };
 
 // i18n
@@ -54,8 +54,8 @@ const toggleLocales = () => {
   const locales = availableLocales;
   locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length];
 };
-
-const msg = ref("msg");
+//
+const msg = ref('msg');
 </script>
 
 <style scoped lang="scss">

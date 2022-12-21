@@ -1,0 +1,8 @@
+.eslintrc.cjs
+node_modules
+package.json
+pnpm-lock.yaml
+dist
+auto-imports.d.ts
+components.d.ts
+src/vue.d.ts
