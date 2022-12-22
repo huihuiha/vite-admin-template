@@ -40,7 +40,7 @@ const router = useRouter();
 const onSubmit = () => {
   if (form.name === 'huihui' && form.password === '123456') {
     router.push({
-      name: 'Index',
+      name: 'Home',
     });
   }
 };
