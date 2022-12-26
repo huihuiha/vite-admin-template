@@ -5,6 +5,7 @@
     "target": "es2016",
     "lib": ["DOM", "ESNext"],
     "strict": true,
+    "noImplicitAny": false,
     "esModuleInterop": true,
     "incremental": false,
     "skipLibCheck": true,
@@ -20,7 +21,7 @@
     ],
     "paths": {
       "@/*": ["src/*"]
-    },
+    }
   },
   "includes": ["vue.d.ts"],
   "exclude": ["dist", "node_modules", "cypress"]

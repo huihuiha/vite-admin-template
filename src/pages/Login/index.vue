@@ -1,11 +1,11 @@
 <template>
   <div class="login-page">
     <div class="login-wrap">
-      <el-form :model="form" label-width="70px">
-        <el-form-item label="用户名：">
+      <el-form :rules="rules" :model="form" label-width="70px">
+        <el-form-item label="用户名：" prop="name">
           <el-input v-model="form.name" />
         </el-form-item>
-        <el-form-item label="密码：">
+        <el-form-item label="密码：" prop="password">
           <el-input
             v-model="form.password"
             :type="isShowPas ? 'text' : 'password'"
@@ -24,10 +24,15 @@
 </template>
 
 <script setup lang="ts">
+import { validatePassword } from './rule';
 // 表单信息
 const form = reactive({
   name: '',
   password: '',
+});
+
+const rules = reactive({
+  password: [{ validator: validatePassword, trigger: 'blur' }],
 });
 
 // 密码是否可见
