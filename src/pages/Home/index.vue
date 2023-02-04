@@ -34,6 +34,15 @@ import logoSrc from '@assets/imgs/logo.png';
 // store
 import { useCounterStore } from '@/stores/user';
 
+import axios from 'axios';
+import { onMounted } from 'vue';
+
+onMounted(() => {
+  axios.get('/api/getUserInfo').then((data) => {
+    console.log('data:', data);
+  });
+});
+
 const countStore = useCounterStore();
 
 const count = ref(0);

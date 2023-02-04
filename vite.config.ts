@@ -12,7 +12,7 @@ import Components from 'unplugin-vue-components/vite';
 import VueI18n from '@intlify/vite-plugin-vue-i18n';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import { ViteAliases } from 'vite-aliases';
-
+import { viteMockServe } from 'vite-plugin-mock';
 // svg
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 
@@ -21,6 +21,7 @@ export default defineConfig({
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
   },
   plugins: [
+    viteMockServe(),
     ViteAliases(),
     vue(),
     // CSS 原子化
