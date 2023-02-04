@@ -11,22 +11,17 @@ import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import VueI18n from '@intlify/vite-plugin-vue-i18n';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+import { ViteAliases } from 'vite-aliases';
 
 // svg
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 
 export default defineConfig({
   resolve: {
-    alias: {
-      '@/': `${path.resolve(__dirname, 'src')}/`,
-      '@assets/': `${path.resolve(__dirname, 'src/assets')}/`,
-      '@hooks/': `${path.resolve(__dirname, 'src/hooks')}/`,
-      '@components/': `${path.resolve(__dirname, 'src/components')}/`,
-      '@stores/': `${path.resolve(__dirname, 'src/stores')}/`,
-    },
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
   },
   plugins: [
+    ViteAliases(),
     vue(),
     // CSS 原子化
     Unocss({
